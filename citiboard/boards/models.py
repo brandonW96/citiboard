@@ -12,18 +12,29 @@ class Board(models.Model)
 	"""
 	#fields 
 	Board_ID = models.UUIDField(primary_key=True, default = uuid.uuid4, editable=False)
-	user = models.OneToOneField(User, blank = False, null = False)
-	Is_In_Use = False;
-	Is_Reserved = False; 
-	Is_Broken = False; 
-	AVAILABILITY = True; 
+	user = models.OneToOneField(User, blank = True, null = False)
+	Is_In_Use = False
+	Is_Reserved = False 
+	Is_Broken = False
+	AVAILABILITY = True
 	   
 	def __str__ (self):
 		if AVAILABILITY  == True:
 			return "Board %d is currently available" % (self.Board_ID)
 		else :
 			return "Board %d is currently unavailable" % (self.Board_ID)
+			
+	def check_Available(self):
+		if Is_Broken == False:
+			if Is_In_Use == False:
+				if Is_Reserved == False:
+					AVAILABILITY = True
+		else:
+			AVAILABILIY = False
 	
+				
+		
+					
 class Rider(models.Model)
-	
+	user = models.OneToOne(User, blank = False, null = False)
 	
