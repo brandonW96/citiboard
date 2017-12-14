@@ -15,7 +15,7 @@ class Board(models.Model)
 	Is_Reserved = False; 
 	Is_Broken = False; 
 	AVAILABILITY = True; 
-	
+	   
 	def __str__ (self):
 		if AVAILABILITY  == True:
 			return "Board %d is currently available" % (self.Board_ID)
