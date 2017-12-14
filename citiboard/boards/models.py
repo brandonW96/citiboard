@@ -13,6 +13,7 @@ class Board(models.Model)
 	#fields 
 	Board_ID = models.UUIDField(primary_key=True, default = uuid.uuid4, editable=False)
 	user = models.OneToOneField(User, blank = True, null = False)
+	station = models.ForeignKey(Station, blank = False, null = False)
 	Is_In_Use = False
 	Is_Reserved = False 
 	Is_Broken = False
@@ -35,6 +36,20 @@ class Board(models.Model)
 				
 		
 					
-class Rider(models.Model)
-	user = models.OneToOne(User, blank = False, null = False)
+class Station(models.Model)
+	""" 
+		Defining the model for Stations
+	"""
+	Station_ID = models.UUISField(primary_key = True, default = uuid.uuid4, editable = False)
+	max_Num_Bikes = models.IntegerField(deafult = 0)
+	curr_Num_Bikes = models.IntegerField(deafult = 20)
+	
+	def __str__ (self):
+		return "%s" %Station_ID
+		
+	def bike_Rented(self):
+		curr_Num_Bikes--
+	def bike_Returned(self):
+		curr_Num_Bikes++
+	
 	
