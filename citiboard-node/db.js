@@ -1,32 +1,48 @@
 const mongoose = require('mongoose');
 const URLSlugs = require('mongoose-url-slugs');
 
-const Game = new mongoose.Schema({
-    gameStats: Object,
-    playerStats: Object
+const User = new mongoose.Schema({
+    userId: Number,
+    firstName: String,
+    lastName: String
 });
 
-const Player = new mongoose.Schema({
+const Board = new mongoose.Schema({
+    boardId: Number
+});
+
+const Station = new mongoose.Schema({
+    stationId: Number,
     name: String,
-    summonerId: Number,
-    points: Number,
-    recentGames: [Game]
-    // recentGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }]
+    boardList: [Board]
 });
 
-const League = new mongoose.Schema({
-    name: String,
-    startTime: Date,
-    lastUpdate: Date,
-    players: [Player]
-    // players: [{ type: Schema.Types.ObjectId, ref: 'Player' }]
-});
+// const Game = new mongoose.Schema({
+//     gameStats: Object,
+//     playerStats: Object
+// });
 
-League.plugin(URLSlugs('name'));
+// const Player = new mongoose.Schema({
+//     name: String,
+//     summonerId: Number,
+//     points: Number,
+//     recentGames: [Game]
+//     // recentGames: [{ type: Schema.Types.ObjectId, ref: 'Game' }]
+// });
 
-mongoose.model('Player', Player);
-mongoose.model('League', League);
-mongoose.model('Game', Game)
+// const League = new mongoose.Schema({
+//     name: String,
+//     startTime: Date,
+//     lastUpdate: Date,
+//     players: [Player]
+//     // players: [{ type: Schema.Types.ObjectId, ref: 'Player' }]
+// });
+
+// League.plugin(URLSlugs('name'));
+
+// mongoose.model('Player', Player);
+// mongoose.model('League', League);
+// mongoose.model('Game', Game)
 
 mongoose.Promise = global.Promise;
 
