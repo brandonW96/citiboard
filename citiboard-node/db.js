@@ -4,20 +4,21 @@ const URLSlugs = require('mongoose-url-slugs');
 const User = new mongoose.Schema({
     userId: Number,
     firstName: String,
-    lastName: String
-    currentBoard: Number,
+    lastName: String,
+    renting: Boolean
 });
 
 const Board = new mongoose.Schema({
-    boardId: Number
+    boardId: Number,
     isAvailable: Boolean,
+    rentedTo: User
 });
 
 const Station = new mongoose.Schema({
     stationId: Number,
     name: String,
-    boardList: [Board]
-    available: Number,
+    boardList: [Board],
+    available: Number
 });
 
 // const Game = new mongoose.Schema({
