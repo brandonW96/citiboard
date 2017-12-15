@@ -1,0 +1,74 @@
+<h1>Home</h1>
+
+<!-- Input Summoner Names Form -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="text-center">Enter up to 8 summoner names</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <form method="post" action="/" class="form-horizontal">
+        <div class="form-group">
+          <div class="col-md-12">
+            <input type="text" name="leagueName" class="form-control" placeholder="League Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner1" class="form-control" placeholder="Summoner 1">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner2" class="form-control" placeholder="Summoner 2">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner3" class="form-control" placeholder="Summoner 3">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner4" class="form-control" placeholder="Summoner 4">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner5" class="form-control" placeholder="Summoner 5">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner6" class="form-control" placeholder="Summoner 6">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner7" class="form-control" placeholder="Summoner 7">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" name="summoner8" class="form-control" placeholder="Summoner 8">
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-default" type="submit">Submit League!</button>
+        </div>
+      </form>
+
+      <!-- Error message -->
+      {{#if errors}}
+      <ul>
+      {{#each errors}}
+          <li><div class="error">{{this.msg}}</div></li>
+      {{/each}}
+      </ul>
+      {{/if}}
+
+    </div>
+  </div>
+</div>
