@@ -1,0 +1,63 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: black;
+}
+
+
+/*body {
+	background-color: #5c6670;
+}*/
+
+
+.form-control {
+	background-color: #e6f0ff;
+	border: none;
+}
+
+.form-control:focus {
+	border-color: #e6f0ff;
+	box-shadow: none;
+}
+
+.navbar {
+	background-color: #e6f0ff;
+	font-size: 1.4em;
+	border: none;
+}
+
+.navbar-brand {
+	font-size: 2em;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody th, tr:hover {
+  background-color: #e6f0ff;
+}
+
+.btn:hover {
+	background-color: #e6f0ff;
+}
+
+.btn-primary:hover {
+    color: #e6f0ff;
+    background-color: #e6f0ff;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.bootstrap-select .btn:focus {
+    outline: none !important;
+}
+
+li:hover {
+	background-color: #e6f0ff;
+}
+
+.error {
+    color: red
+}
+/*.champion-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}*/
